@@ -1,0 +1,44 @@
+{
+  "name": "nextjs-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "knip": "knip",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:html": "vitest run --coverage --coverage-report=html"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@storybook/nextjs-vite": "^10.4.6",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/browser-playwright": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.9",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "eslint-plugin-storybook": "^10.4.6",
+    "jsdom": "^29.1.1",
+    "knip": "^5.64.1",
+    "prettier": "3.8.4",
+    "storybook": "^10.4.6",
+    "typescript": "^5",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
+  }
+}

@@ -1,0 +1,52 @@
+:root {
+  /* Named Color Tokens */
+  --white: #ffffff;
+  --black: #000000;
+  --neutral-950: #0a0a0a;
+  --neutral-900: #171717;
+  --neutral-850: #18181b;
+  --neutral-700: #383838;
+  --neutral-400: #a1a1aa;
+  --neutral-300: #cccccc;
+  --neutral-200: #ededed;
+  --neutral-50: #fafafa;
+  --zinc-600: #52525b;
+  --black-alpha-8: rgba(0, 0, 0, 0.08);
+  --white-alpha-14: rgba(255, 255, 255, 0.145);
+
+  /* Basic Theme Variables */
+  --background: var(--white);
+  --foreground: var(--neutral-900);
+  --surface: var(--white);
+  --surface-muted: var(--neutral-50);
+  --text-muted: var(--zinc-600);
+  --text-strong: var(--neutral-850);
+  --border: var(--black-alpha-8);
+  --button-hover: var(--neutral-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--neutral-950);
+    --foreground: var(--neutral-200);
+    --surface: var(--neutral-950);
+    --surface-muted: var(--black);
+    --text-muted: var(--neutral-400);
+    --text-strong: var(--neutral-50);
+    --border: var(--white-alpha-14);
+    --button-hover: var(--neutral-300);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
