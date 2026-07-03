@@ -19,7 +19,6 @@ vi.mock("next/link", () => ({
 import Header from "./index";
 
 describe("Header", () => {
-
   it("renders", () => {
     const { container } = render(<Header />);
 
