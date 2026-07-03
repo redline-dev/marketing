@@ -1,0 +1,10 @@
+/*
+ * app/fonts.ts uses next/font/google, which relies on a webpack/SWC build
+ * transform that @storybook/nextjs-vite doesn't run. So in Storybook the
+ * --font-inter / --font-ibm-plex-mono variables never get defined by Next
+ * and must be provided here instead, loaded via preview-head.html.
+ */
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-ibm-plex-mono: "IBM Plex Mono", monospace;
+}
