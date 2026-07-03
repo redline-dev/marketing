@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className={styles.headerContainer}>
       <Link href="/">
-        <h1>Redline Development</h1>
+        Redline Development
       </Link>
     </header>
   );
