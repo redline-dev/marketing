@@ -5,9 +5,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className={styles.headerContainer}>
-      <Link href="/">
-        <h1>{process.env.NEXT_PUBLIC_SITE_NAME}</h1>
-      </Link>
+      <h1>Redline Development</h1>
     </header>
   );
 }

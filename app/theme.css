@@ -1,0 +1,105 @@
+:root {
+  /* COLOR PALETTE */
+
+  /* Base */
+  --color-black: #050607;
+  --color-onyx: #09090b;
+  --color-charcoal: #101114;
+  --color-gunmetal: #16181d;
+
+  /* Borders */
+  --color-slate: #252830;
+  --color-graphite: #1a1c22;
+
+  /* Typography */
+  --color-white: #f5f5f2;
+  --color-bone: #ecece8;
+  --color-silver: #9d9ea5;
+  --color-gray: #676b74;
+
+  /* Brand */
+  --color-red: #ff4044;
+  --color-coral: #ff595d;
+  --color-crimson: #d93338;
+
+  /* Utility */
+  --color-white-faint: rgba(255, 255, 255, 0.04);
+  --color-black-heavy: rgba(0, 0, 0, 0.7);
+  --color-black-soft: rgba(0, 0, 0, 0.35);
+  --color-red-soft: rgba(255, 64, 68, 0.35);
+
+  /* THEME */
+
+  --theme-bg: var(--color-onyx);
+  --theme-surface: var(--color-charcoal);
+  --theme-surface-alt: var(--color-gunmetal);
+
+  --theme-text: var(--color-bone);
+  --theme-text-muted: var(--color-silver);
+  --theme-text-subtle: var(--color-gray);
+
+  --theme-border: var(--color-slate);
+  --theme-border-subtle: var(--color-graphite);
+
+  --theme-primary: var(--color-red);
+  --theme-primary-hover: var(--color-coral);
+  --theme-primary-active: var(--color-crimson);
+
+  --theme-shadow: 0 18px 60px var(--color-black-soft);
+  --theme-focus-ring: 0 0 0 3px var(--color-red-soft);
+
+  /* TYPOGRAPHY */
+
+  --font-sans:
+    var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --font-mono: var(--font-ibm-plex-mono), "SF Mono", Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-2xl: clamp(3rem, 6vw, 5.5rem);
+
+  --line-height-tight: 1;
+  --line-height-base: 1.5;
+
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.12em;
+
+  /* SPACING SCALE */
+  --space-sm: 0.25rem;
+  --space-md: 0.5rem;
+  --space-lg: 1rem;
+  --space-xl: 2rem;
+  --space-xxl: 4rem;
+  --space-xxxl: 8rem;
+
+  /* LAYOUT */
+
+  --container-width: 1440px;
+  --container-padding: clamp(1.5rem, 4vw, 3rem);
+
+  --section-spacing: clamp(5rem, 10vw, 8rem);
+
+  --grid-gap: var(--space-6);
+
+  --card-padding: clamp(1.25rem, 2vw, 2rem);
+
+  /* BORDERS */
+
+  --border-width: 1px;
+  --border-radius-sm: 2px;
+  --border-radius: 4px;
+  --border-radius-lg: 8px;
+
+  /* TRANSITIONS */
+
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

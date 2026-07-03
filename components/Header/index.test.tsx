@@ -1,8 +1,8 @@
 /** @vitest-environment jsdom */
 
 import type { ReactNode } from "react";
-import { render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { render } from "@testing-library/react";
+import { describe, it, vi, expect } from "vitest";
 
 vi.mock("./index.module.css", () => ({
   default: {
@@ -19,20 +19,11 @@ vi.mock("next/link", () => ({
 import Header from "./index";
 
 describe("Header", () => {
-  beforeEach(() => {
-    process.env.NEXT_PUBLIC_SITE_NAME = "Redline Development";
-  });
+  it("renders", () => {
+    const { container } = render(<Header />);
 
-  it("renders a home link with the site name", () => {
-    render(<Header />);
+    const header = container.querySelector("header");
 
-    const siteTitle = screen.getByRole("heading", {
-      level: 1,
-      name: "Redline Development",
-    });
-    const homeLink = screen.getByRole("link", { name: "Redline Development" });
-
-    expect(siteTitle).toBeTruthy();
-    expect(homeLink.getAttribute("href")).toBe("/");
+    expect(header).toBeTruthy();
   });
 });

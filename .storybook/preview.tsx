@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/nextjs-vite";
+import "../app/globals.css";
+import "./fonts.css";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +11,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default preview;
