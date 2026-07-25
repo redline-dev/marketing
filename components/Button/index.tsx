@@ -2,10 +2,10 @@ import type { MouseEventHandler, ReactNode } from "react";
 
 import styles from "./index.module.css";
 
-export type ButtonVariant = "primary" | "secondary";
-export type ButtonSize = "sm" | "md" | "lg";
+type ButtonVariant = "primary" | "secondary";
+type ButtonSize = "sm" | "md" | "lg";
 
-export interface ButtonProps {
+interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
