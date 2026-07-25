@@ -1,2 +1,72 @@
 .headerContainer {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: var(--theme-bg);
+  border-bottom: var(--border-width) solid var(--theme-border-subtle);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+
+  padding-block: 22px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logoMark {
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--theme-text);
+  white-space: nowrap;
+}
+
+.logoSuffix {
+  color: var(--theme-text-subtle);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+/* Must stay in sync with the matching breakpoint in
+   ../MobileNav/index.module.css, which shows the toggle at the same
+   width. */
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
+
+.navLink {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--theme-text-muted);
+
+  transition: color var(--duration-normal) var(--ease);
+}
+
+.navLink:hover,
+.navLink[aria-current="page"] {
+  color: var(--theme-text);
 }

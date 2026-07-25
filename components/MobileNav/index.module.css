@@ -1,0 +1,120 @@
+/* Shown only below the mobile breakpoint — must stay in sync with the
+   matching breakpoint in ../Header/index.module.css, which hides the
+   desktop link row at the same width. There's no shared breakpoint
+   token in theme.css yet, so this is a plain literal for now. */
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobileNav {
+    display: block;
+  }
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  /* Must stay above .panel's z-index (40) — they're sibling positioned
+     elements in the same stacking context, so the panel would otherwise
+     paint over the toggle once open, hiding the close (X) icon. */
+  position: relative;
+  z-index: 41;
+}
+
+.toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--theme-focus-ring);
+}
+
+.bar {
+  width: 20px;
+  height: 2px;
+  background: var(--theme-text);
+
+  transition:
+    transform var(--duration-normal) var(--ease),
+    opacity var(--duration-normal) var(--ease);
+}
+
+.barOpenTop {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barOpenHide {
+  opacity: 0;
+}
+
+.barOpenBottom {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--space-xl);
+
+  padding: var(--container-padding);
+  /* Clears the header (77px rendered height today) plus breathing room.
+     The header sits above this panel and visually crops it, so content
+     placed above this offset would render underneath the header. No
+     shared header-height token exists yet — bump this if Header's own
+     padding/font-size changes its rendered height. */
+  padding-top: calc(77px + var(--space-xl));
+
+  background: var(--theme-bg);
+
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  transition:
+    opacity var(--duration-normal) var(--ease),
+    transform var(--duration-normal) var(--ease);
+}
+
+.panelOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.panelNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.panelLink {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--theme-text-muted);
+
+  transition: color var(--duration-normal) var(--ease);
+}
+
+.panelLink:hover,
+.panelLink[aria-current="page"] {
+  color: var(--theme-text);
+}
