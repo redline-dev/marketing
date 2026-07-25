@@ -1,0 +1,42 @@
+.card {
+  border: var(--border-width) solid var(--theme-border-subtle);
+  border-radius: 0;
+  background: var(--theme-surface);
+}
+
+/* Padding variants */
+
+.sm {
+  padding: var(--space-lg);
+}
+
+.md {
+  padding: var(--card-padding);
+}
+
+.lg {
+  padding: var(--space-xl);
+}
+
+/* Hover-ready styling hook — opt-in per usage, since not every card
+   composed from this primitive is meant to be interactive. */
+
+.interactive {
+  transition:
+    border-color var(--duration-normal) var(--ease),
+    box-shadow var(--duration-normal) var(--ease),
+    transform var(--duration-normal) var(--ease);
+}
+
+.interactive:hover {
+  border-color: var(--theme-primary);
+  box-shadow: var(--theme-shadow);
+  transform: translateY(-4px);
+}
+
+/* Optional glow/border accent */
+
+.accent {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 24px var(--color-red-soft);
+}
