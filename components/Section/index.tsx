@@ -6,23 +6,11 @@ export type SectionSpacing = "default" | "compact" | "spacious" | "none";
 
 export interface SectionProps {
   children?: ReactNode;
-  /**
-   * Vertical rhythm applied as `padding-block`. `default` uses the shared
-   * `--section-spacing` token; the others scale it up or down.
-   */
   spacing?: SectionSpacing;
-  /** Element to render. Defaults to `section`. */
   as?: ElementType;
   className?: string;
   style?: CSSProperties;
 }
-
-/**
- * A vertical rhythm band — the consistent `padding-block` between page
- * sections, plus semantic grouping. Intentionally free of page content and of
- * width constraints: compose a `Container` inside for the content column, and
- * put any full-bleed background on `Section` itself via `className`.
- */
 export default function Section({
   children,
   spacing = "default",

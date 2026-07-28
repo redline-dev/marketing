@@ -12,21 +12,10 @@ import styles from "./index.module.css";
 
 export interface GridProps {
   children?: ReactNode;
-  /**
-   * Explicit column count. Responsive — e.g. `{ base: 1, md: 2, lg: 3 }` for
-   * the services grid. Ignored when `minChildWidth` is set.
-   */
   columns?: Responsive<number>;
-  /**
-   * Fluid alternative to `columns`: auto-fits as many columns as fit, each at
-   * least this wide (e.g. `"16rem"`). Wraps without media queries.
-   */
   minChildWidth?: string;
-  /** Gap between cells, from the spacing scale. Defaults to `--grid-gap`. */
   gap?: Responsive<Space>;
-  /** `align-items` value for the cells. */
   align?: CSSProperties["alignItems"];
-  /** Element to render. Defaults to `div`. */
   as?: ElementType;
   className?: string;
   style?: CSSProperties;
@@ -34,12 +23,6 @@ export interface GridProps {
 
 const columnsTemplate = (count: number) => `repeat(${count}, minmax(0, 1fr))`;
 
-/**
- * A two-dimensional CSS grid. Use `columns` for the mockup's exact counts
- * (3-up services, 2-up work, 4-up process), or `minChildWidth` for a fluid
- * auto-fit grid. Column count can't be interpolated, so responsive `columns`
- * drives real breakpoints; everything else stays token-driven.
- */
 export default function Grid({
   children,
   columns,
