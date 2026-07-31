@@ -5,12 +5,12 @@ component (no client JS) styled with CSS modules and the design tokens in
 [`app/theme.css`](../app/theme.css). Interactive examples for every variant live
 in Storybook under **Layout/** (`npm run storybook`).
 
-| Primitive   | Responsibility                                              |
-| ----------- | ----------------------------------------------------------- |
-| `Container` | Centers content, applies the gutter, caps the max width.    |
-| `Section`   | Vertical rhythm (`padding-block`) between page sections.    |
-| `Stack`     | One-dimensional flex layout with a token gap.               |
-| `Grid`      | Two-dimensional grid — fixed responsive columns or auto-fit. |
+| Primitive   | Responsibility                                                |
+| ----------- | ------------------------------------------------------------- |
+| `Container` | Centers content, applies the gutter, caps the max width.      |
+| `Section`   | Vertical rhythm (`padding-block`) between page sections.      |
+| `Stack`     | One-dimensional flex layout with a token gap.                 |
+| `Grid`      | Two-dimensional grid — fixed responsive columns or auto-fit.  |
 | `Divider`   | A 1px rule: section rule, inline separator, or timeline line. |
 
 ## Responsive model
