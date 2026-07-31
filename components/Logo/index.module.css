@@ -1,0 +1,50 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--line-height-tight);
+  color: var(--theme-text);
+}
+
+.mark {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  background: var(--theme-primary);
+}
+
+.wordmark {
+  color: var(--theme-text);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.suffix {
+  font-weight: 400;
+  color: var(--theme-text-muted);
+}
+
+/* Sizes */
+
+.sm {
+  font-size: var(--text-xs);
+  gap: var(--space-sm);
+}
+
+.md {
+  font-size: var(--text-sm);
+}
+
+.lg {
+  font-size: var(--text-md);
+}

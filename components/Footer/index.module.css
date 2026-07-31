@@ -1,2 +1,8 @@
 .footerContainer {
+  border-top: var(--border-width) solid var(--theme-border-subtle);
+  padding-block: var(--space-xl);
+}
+
+.copyright {
+  font-family: var(--font-mono);
 }
