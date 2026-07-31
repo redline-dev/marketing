@@ -1,15 +1,18 @@
 /** @vitest-environment jsdom */
 
-import { render } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("./index.module.css", () => ({
   default: {
     footerContainer: "footerContainer",
+    copyright: "copyright",
   },
 }));
 
 import Footer from "./index";
+
+afterEach(cleanup);
 
 describe("Footer", () => {
   it("renders a footer element", () => {
@@ -19,5 +22,21 @@ describe("Footer", () => {
 
     expect(footer).toBeTruthy();
     expect(footer?.className).toBe("footerContainer");
+  });
+
+  it("renders the Logo wordmark", () => {
+    render(<Footer />);
+
+    expect(screen.getByText("REDLINE")).toBeTruthy();
+  });
+
+  it("renders the current year in the copyright notice", () => {
+    render(<Footer />);
+
+    const year = new Date().getFullYear().toString();
+
+    expect(
+      screen.getByText((text) => text.includes(year) && text.includes("©")),
+    ).toBeTruthy();
   });
 });
