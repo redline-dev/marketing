@@ -1,0 +1,34 @@
+/*
+ * Breakpoints (base / md / lg) are duplicated here as literals from
+ * lib/responsive.ts — keep them in sync. Each property reads a fallback
+ * cascade so an unset breakpoint inherits the next-smallest value.
+ */
+
+.stack {
+  display: flex;
+  flex-direction: var(--stack-direction-base, column);
+  gap: var(--stack-gap-base, var(--space-lg));
+}
+
+@media (min-width: 768px) {
+  .stack {
+    flex-direction: var(
+      --stack-direction-md,
+      var(--stack-direction-base, column)
+    );
+    gap: var(--stack-gap-md, var(--stack-gap-base, var(--space-lg)));
+  }
+}
+
+@media (min-width: 1024px) {
+  .stack {
+    flex-direction: var(
+      --stack-direction-lg,
+      var(--stack-direction-md, var(--stack-direction-base, column))
+    );
+    gap: var(
+      --stack-gap-lg,
+      var(--stack-gap-md, var(--stack-gap-base, var(--space-lg)))
+    );
+  }
+}

@@ -1,0 +1,34 @@
+/*
+ * Breakpoints (base / md / lg) are duplicated here as literals from
+ * lib/responsive.ts — keep them in sync. Columns and gap each read a fallback
+ * cascade so an unset breakpoint inherits the next-smallest value.
+ */
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap-base, var(--grid-gap));
+  grid-template-columns: var(--grid-columns-base, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: var(--grid-gap-md, var(--grid-gap-base, var(--grid-gap)));
+    grid-template-columns: var(
+      --grid-columns-md,
+      var(--grid-columns-base, 1fr)
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: var(
+      --grid-gap-lg,
+      var(--grid-gap-md, var(--grid-gap-base, var(--grid-gap)))
+    );
+    grid-template-columns: var(
+      --grid-columns-lg,
+      var(--grid-columns-md, var(--grid-columns-base, 1fr))
+    );
+  }
+}
