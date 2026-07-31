@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+
+  padding: var(--card-padding);
+
+  background: var(--theme-surface);
+  border: var(--border-width) solid var(--theme-border);
+  border-radius: var(--border-radius);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+
+  color: var(--theme-primary);
+}
